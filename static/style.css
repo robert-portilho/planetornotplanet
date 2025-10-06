@@ -143,6 +143,10 @@
   color: #ffcc00;
 }
 
+.carousel-item h3 a {
+  color: #ffcc00;
+}
+
 .carousel-item p {
   font-size: 0.9em;
   margin-bottom: 4px;
