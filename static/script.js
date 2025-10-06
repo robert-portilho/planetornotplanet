@@ -83,7 +83,7 @@
     console.log("Resposta do modelo:", data);
 
     document.getElementById("statClass").innerText = `There is a probability of : ${(data.prediction_probability * 100).toFixed(2)}% of being an exoplanet`;
-    document.getElementById("result").style.display = "block";
+    //document.getElementById("result").style.display = "block";
 
   } catch (err) {
     alert("Erro: " + err.message);
