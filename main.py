@@ -18,6 +18,11 @@ app.add_middleware(
 )
 app.include_router(predict.router)
 
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+# Rota raiz -> index.html
 @app.get("/")
-def root():
-    return {"message": "API de predição online"}
+async def root():
+    return FileResponse("static/index.html")
