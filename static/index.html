@@ -14,48 +14,51 @@
 <!-- Navbar -->
 <nav class="navbar">
   <ul>
-    <li><a href="#uploadSection">Run Analysis</a></li>
+    <li><a href="inputSection">Is it an exoplanet?</a></li>
     <!--<li><a href="#graphSection">Light Curve</a></li>-->
-    <li><a href="#statsSection">Statistics</a></li>
-    <li><a href="#carouselSection">Explore Planets</a></li>
+    <li><a href="#resultSection">Result</a></li>
+    <li><a href="#carouselSection">Explore exoplanets</a></li>
   </ul>
 </nav>
 
-<header>Planet or not Planet</header>
+<header>Exoplanet or not exoplanet? (That is the question)</header>
 
 <div class="container">
 <!-- Input Section -->
 <div class="card" id="inputSection">
-  <h2>Enter Observation Parameters</h2>
+  <h2>Enter observation parameters of your possible exoplanet candidate:</h2>
+  <span>
+    For more details about the meaning of each parameter, check <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative">here</a>.
+  </span>
 
   <div class="input-grid">
     <div class="input-wrapper">
-      <label for="koi_duration">koi_duration</label>
+      <label for="koi_duration">Transit Duration [hours]</label>
       <input id="koi_duration" type="number" step="any" placeholder="Transit duration">
     </div>
 
     <div class="input-wrapper">
-      <label for="koi_ror">koi_ror</label>
-      <input id="koi_ror" type="number" step="any" placeholder="Radius ratio (planet/star)">
+      <label for="koi_ror">Planet-Star Radius Ratio</label>
+      <input id="koi_ror" type="number" step="any" placeholder="Planet-Star Radius Ratio">
     </div>
 
     <div class="input-wrapper">
-      <label for="koi_srho">koi_srho</label>
-      <input id="koi_srho" type="number" step="any" placeholder="Stellar density">
+      <label for="koi_srho">Fitted Stellar Density [g/cm³]</label>
+      <input id="koi_srho" type="number" step="any" placeholder="Fitted Stellar Density">
     </div>
 
     <div class="input-wrapper">
-      <label for="koi_dicco_msky">koi_dicco_msky</label>
-      <input id="koi_dicco_msky" type="number" step="any" placeholder="Displacement correlation (sky)">
+      <label for="koi_dicco_msky">PRF ΔθSQ(OOT) [arcseconds]</label>
+      <input id="koi_dicco_msky" type="number" step="any" placeholder="PRF ΔθSQ(OOT)">
     </div>
 
     <div class="input-wrapper">
-      <label for="koi_dikco_msky">koi_dikco_msky</label>
-      <input id="koi_dikco_msky" type="number" step="any" placeholder="Intrinsic motion correlation">
+      <label for="koi_dikco_msky">PRF ΔθSQ(KIC) [arcseconds]</label>
+      <input id="koi_dikco_msky" type="number" step="any" placeholder="PRF ΔθSQ(KIC)">
     </div>
   </div>
 
-  <button onclick="analyzeData()" class="glass-btn">Run Analysis</button>
+  <button onclick="analyzeData()" class="glass-btn">Predict exoplanet probability</button>
 </div>
 
 
@@ -68,13 +71,13 @@
   </div>-->
 
   <!-- Stats Section -->
-  <div class="card stats-grid" id="statsSection">
-    <div class="stat-card"><h3>Classification</h3><p id="statClass">-</p></div>
+  <div class="card stats-grid" id="resultSection">
+    <div class="stat-card"><h3>Result:</h3><p id="statClass">-</p></div>
   </div>
 
   <!-- Carousel Section -->
   <div class="card" id="carouselSection">
-    <h2>Explore Other Exoplanets</h2>
+    <h2>Explore other known exoplanets</h2>
     <div class="carousel-container">
       <button class="carousel-btn left" onclick="moveCarousel(-1)">&#10094;</button>
       <div class="carousel-track">
