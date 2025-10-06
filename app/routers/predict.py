@@ -30,7 +30,6 @@ def predict(input_data: PredictionInput):
         model = joblib.load(model_path)
         
 
-
         # 🔸 Cria um DataFrame com os dados recebidos
         obs = pd.DataFrame([{
             "koi_duration": input_data.koi_duration,
